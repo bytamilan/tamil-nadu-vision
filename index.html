@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ByTamilan — One Small Problem at a Time</title>
+<meta name="description" content="A civic commons for Tamil Nadu's $1.5 trillion vision — built one small problem at a time, by people who would rather build than complain.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305070a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8c37a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Instrument+Serif:ital@0;1&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles/main.css">
+
+<script type="importmap">
+{
+	"imports": {
+		"three": "https://cdn.jsdelivr.net/npm/three@0.185.0/build/three.webgpu.js",
+		"three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.185.0/build/three.webgpu.js",
+		"three/tsl": "https://cdn.jsdelivr.net/npm/three@0.185.0/build/three.tsl.js",
+		"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.0/examples/jsm/",
+		"lenis": "https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.mjs"
+	}
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script type="module" src="./src/main.js"></script>
+</head>
+
+<body>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="atmosphere" aria-hidden="true"></div>
+
+<header class="chrome nav">
+	<a class="nav__brand" href="#top">
+		<span class="nav__mark" aria-hidden="true"></span>
+		BYTAMILAN
+	</a>
+	<nav class="nav__meta" aria-label="Built with">
+		<span>TAMIL NADU</span><span class="dot" aria-hidden="true">·</span>
+		<span>VISION 2036</span><span class="dot" aria-hidden="true">·</span>
+		<span>CIVIC COMMONS</span>
+	</nav>
+</header>
+
+<div class="chrome scrollbar" aria-hidden="true"><i data-progress></i></div>
+
+<aside class="chrome rail" aria-hidden="true">
+	<ol>
+		<li data-rail="0"><b>I</b><span>Vision</span></li>
+		<li data-rail="1"><b>II</b><span>Residue</span></li>
+		<li data-rail="2"><b>III</b><span>Lanes</span></li>
+		<li data-rail="3"><b>IV</b><span>Rules</span></li>
+	</ol>
+</aside>
+
+<div class="chrome hud" aria-hidden="true">
+	<span data-hud="fps">— fps</span>
+	<span class="dot">·</span>
+	<span data-hud="count">— in the field</span>
+	<span class="dot">·</span>
+	<span data-hud="state">vision</span>
+</div>
+
+<main id="top">
+
+	<section class="panel hero">
+		<div class="panel__inner">
+			<p class="eyebrow" data-reveal>An invitation to the young people of Tamil Nadu</p>
+			<h1 class="display display--hero" data-reveal-lines>One small problem at a time.</h1>
+			<p class="lede" data-reveal><span class="tamil">“அருமை உடைத்தென்று அசாவாமை வேண்டும்; பெருமை முயற்சி தரும்.”</span><br>
+				Do not slacken, saying the task is hard — effort itself is what makes greatness.
+				<em>— Thirukkural 611</em></p>
+		</div>
+		<div class="hero__cue" data-reveal>
+			<span>Scroll</span>
+			<i aria-hidden="true"></i>
+		</div>
+	</section>
+
+	<section class="panel chapter chapter--left" data-chapter="0">
+		<div class="panel__inner">
+			<div class="card">
+				<p class="eyebrow"><b>I</b> — The number</p>
+				<h2 class="display" data-reveal-lines>The Vision</h2>
+				<p class="body" data-reveal>Tamil Nadu has set itself a target: a <b>$1.5 trillion economy
+					by 2036</b> — the <em>Vetri Tamizhagam</em> vision. And it is not a fantasy. The state
+					already leads the country in vehicles, garments and leather, and graduates over half a
+					million students a year. In 1976 a retired eye surgeon in Madurai opened an eleven-bed
+					hospital with arthritic hands and no funding. Aravind Eye Care now performs more eye
+					surgeries than any organisation on earth — and most of its patients pay nothing. It
+					began with one person deciding a fixable problem should not stay unfixed on his watch.
+					That is the entire idea behind this platform.</p>
+				<dl class="spec" data-reveal>
+					<div><dt>Target</dt><dd>$1.5T by 2036</dd></div>
+					<div><dt>Share of India’s GDP</dt><dd>~9.4%</dd></div>
+					<div><dt>Investment pledges</dt><dd>₹1 lakh crore · 97 MoUs</dd></div>
+				</dl>
+			</div>
+		</div>
+	</section>
+
+	<section class="panel chapter chapter--right" data-chapter="1">
+		<div class="panel__inner">
+			<div class="card">
+				<p class="eyebrow"><b>II</b> — What a trillion actually is</p>
+				<h2 class="display" data-reveal-lines>The Residue</h2>
+				<p class="body" data-reveal>$1.5 trillion is not a thing anyone <em>builds</em>. It is a
+					residue — what is left behind after a few crore people each solve something. A farmer
+					in Thanjavur who finally gets an honest price. A student in Ramanathapuram who does
+					not drop out because someone made the scholarship form comprehensible. A weaver in
+					Kanchipuram who sells direct instead of through four middlemen. None of these are
+					trillion-dollar problems — every one is a Saturday-afternoon problem, too small for a
+					ministry and too unglamorous for a startup. They are the right size for us.</p>
+				<dl class="spec" data-reveal>
+					<div><dt>Thanjavur</dt><dd>A mandi price feed that works</dd></div>
+					<div><dt>Ramanathapuram</dt><dd>A scholarship form that makes sense</dd></div>
+					<div><dt>Nagercoil</dt><dd>Government services, in spoken Tamil, understood</dd></div>
+				</dl>
+			</div>
+		</div>
+	</section>
+
+	<section class="panel chapter chapter--left" data-chapter="2">
+		<div class="panel__inner">
+			<div class="card">
+				<p class="eyebrow"><b>III</b> — Where to begin</p>
+				<h2 class="display" data-reveal-lines>The Lanes</h2>
+				<p class="body" data-reveal>You do not need to invent a category — pick a lane that
+					already frustrates you. Civic data, lake and eri restoration, bus routes and
+					last-mile gaps, farm price transparency, Tamil speech and OCR tooling, free exam
+					prep, getting a two-person shop online, health care findable in Tamil in one tap.
+					Tiruppur is worth remembering: when its dyeing units were poisoning the Noyyal, the
+					cluster built zero-liquid-discharge at scale — the first in the world. Not visionary.
+					A town of stubborn people solving a specific problem, because the alternative was
+					unacceptable. That is the temperament we are looking for.</p>
+				<dl class="spec" data-reveal>
+					<div><dt>Lane 1</dt><dd>Civic data · Water · Mobility</dd></div>
+					<div><dt>Lane 2</dt><dd>Agriculture · Tamil in technology</dd></div>
+					<div><dt>Lane 3</dt><dd>Education · MSME · Health access</dd></div>
+				</dl>
+			</div>
+		</div>
+	</section>
+
+	<section class="panel chapter chapter--right" data-chapter="3">
+		<div class="panel__inner">
+			<div class="card">
+				<p class="eyebrow"><b>IV</b> — How this commons works</p>
+				<h2 class="display" data-reveal-lines>The Rules</h2>
+				<p class="body" data-reveal>Three rules, and only three. <b>One:</b> name the problem
+					specifically — not “our roads are bad”, but “Ward 42 has no drainage map, so every
+					monsoon the same three streets flood”. <b>Two:</b> make it small enough to finish —
+					if it needs a policy change to begin, find the version one person with a laptop and
+					a weekend can start. <b>Three:</b> ship something, then share what broke — a
+					half-working prototype with an honest failure log beats a perfect proposal. And one
+					thing we are not doing: waiting for permission.</p>
+				<dl class="spec" data-reveal>
+					<div><dt>Rule 1</dt><dd>Name it specifically</dd></div>
+					<div><dt>Rule 2</dt><dd>Small enough to finish</dd></div>
+					<div><dt>Rule 3</dt><dd>Ship, then share what broke</dd></div>
+				</dl>
+			</div>
+		</div>
+	</section>
+
+	<section class="panel outro">
+		<div class="panel__inner">
+			<h2 class="display display--outro" data-reveal-lines>Build for the future. Enjoy the present.</h2>
+			<p class="lede" data-reveal>Building something with people who care about the same place you
+				care about is not the price of a better future — it is already the good part.
+				<span class="tamil">“யாதும் ஊரே யாவரும் கேளிர்”</span> — every town is our town,
+				everyone our kin. <em>Purananuru 192</em>. Two thousand years ago a Tamil poet wrote the
+				most generous sentence in world literature. Let us earn it again. One small problem at a
+				time. <b>Come build.</b></p>
+
+			<dl class="colophon" data-reveal>
+				<div><dt>15 minutes</dt><dd>Post one problem you have personally seen — where, who it hurts, why it persists</dd></div>
+				<div><dt>A weekend</dt><dd>Pick up someone’s problem and build the ugly first version — a spreadsheet counts</dd></div>
+				<div><dt>A skill</dt><dd>Design, law, agronomy, teaching, accounting, translation — say so</dd></div>
+				<div><dt>Doubts</dt><dd>Join anyway. Nobody here is qualified. That has never been the requirement</dd></div>
+			</dl>
+
+			<footer class="foot" data-reveal>
+				<span>BYTAMILAN — a commons for people who would rather build than complain</span>
+				<span class="dot" aria-hidden="true">·</span>
+				<span>2026</span>
+			</footer>
+		</div>
+	</section>
+
+</main>
+
+<div class="boot" id="boot">
+	<div class="boot__inner">
+		<p class="boot__mark">BYTAMILAN</p>
+		<div class="boot__bar"><i></i></div>
+		<p class="boot__note" data-boot-note>initialising webgpu</p>
+	</div>
+</div>
+
+<div class="fallback" id="fallback" hidden>
+	<div class="fallback__inner">
+		<p class="eyebrow">WebGPU required</p>
+		<h1 class="display">This one needs a newer engine.</h1>
+		<p class="body">The field behind this page is drawn by a WebGPU compute pass, which this browser
+			doesn’t expose yet. Chrome, Edge, or Safari 26+ on a desktop will run it — the manifesto is
+			worth the upgrade.</p>
+		<p class="body fallback__reason" data-fallback-reason></p>
+	</div>
+</div>
+
+</body>
+</html>
